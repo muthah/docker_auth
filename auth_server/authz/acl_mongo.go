@@ -5,8 +5,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/cesanta/docker_auth/auth_server/mgo_session"
 	"github.com/golang/glog"
+	"github.com/nautsio/docker_auth/auth_server/mgo_session"
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 )

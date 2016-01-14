@@ -14,7 +14,7 @@
    limitations under the License.
 */
 
-package main // import "github.com/cesanta/docker_auth/auth_server"
+package main // import "github.com/nautsio/docker_auth/auth_server"
 
 import (
 	"crypto/tls"
@@ -26,9 +26,9 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/cesanta/docker_auth/auth_server/server"
 	"github.com/facebookgo/httpdown"
 	"github.com/golang/glog"
+	"github.com/nautsio/docker_auth/auth_server/server"
 	fsnotify "gopkg.in/fsnotify.v1"
 )
 

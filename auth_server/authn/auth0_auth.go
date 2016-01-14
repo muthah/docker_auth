@@ -20,3 +20,10 @@ func NewAuth0Auth(c *Auth0AuthConfig) (*Auth0Auth, error) {
 func (aa *Auth0Auth) Authenticate(account string, password PasswordString) (bool, error) {
 	return true, nil
 }
+
+func (aa *Auth0Auth) Stop() {
+}
+
+func (aa *Auth0Auth) Name() string {
+	return "Auth0"
+}
