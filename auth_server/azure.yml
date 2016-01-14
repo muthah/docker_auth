@@ -1,0 +1,39 @@
+# A simple example. See reference.yml for explanation for explanation of all options.
+#
+#  auth:
+#    token:
+#      realm: "https://127.0.0.1:5001/auth"
+#      service: "Docker registry"
+#      issuer: "Acme auth server"
+#      rootcertbundle: "/path/to/server.pem"
+
+server:
+  addr: ":5001"
+  certificate: "/Users/eveld/projects/quby/stacks/test/certificates/test.quby-nxt.net.crt"
+  key: "/Users/eveld/projects/quby/stacks/test/certificates/test.quby-nxt.net.key"
+
+token:
+  issuer: "Acme auth server"  # Must match issuer in the Registry config.
+  expiration: 900
+
+# users:
+#   # Password is specified as a BCrypt hash. Use htpasswd -B to generate.
+#   "admin":
+#     password: "$2y$05$LO.vzwpWC5LZGqThvEfznu8qhb5SGqvBSWY1J3yZ4AxtMRZ3kN5jC"  # badmin
+#   "test":
+#     password: "$2y$05$WuwBasGDAgr.QCbGIjKJaep4dhxeai9gNZdmBnQXqpKly57oNutya"  # 123
+
+auth0_auth:
+  domain: "qubybv.eu.auth0.com"
+  connection: "quby-com"
+  client_id: "tiHHC0ckKoF1ZNlxtnA4tn1D7E16t9Id"
+  client_secret: "iSDRVyms-Y8VCmi4b8ToMJfuHfnuYAJ65Fyxurmk_IKPVlChE1Kj_hrj7VmDy8nt"
+
+acl:
+  - match: {account: "admin"}
+    actions: ["*"]
+    comment: "Admin has full access to everything."
+  - match: {account: "user"}
+    actions: ["pull"]
+    comment: "User \"user\" can pull stuff."
+  # Access is denied by default.
